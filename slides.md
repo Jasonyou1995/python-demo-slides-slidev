@@ -16,34 +16,6 @@ mdc: true
 
 # Python & Statistics for Financial Computing
 
-<style>
-/* Increase spacing between two-column slides and add inner column padding
-     so code boxes don't touch each other in the middle. */
-.slidev-layout.two-columns {
-    gap: 2.5rem; /* grid gap between left and right columns */
-}
-
-.slidev-layout.two-columns .col-left,
-.slidev-layout.two-columns .col-right {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    box-sizing: border-box;
-}
-
-/* Ensure code block wrappers don't add extra negative margins */
-.slidev-layout.two-columns pre,
-.slidev-layout.two-columns .code {
-    margin: 0; /* remove extra outer margins so gap is consistent */
-}
-
-@media (max-width: 900px) {
-    /* On small screens, reduce gap so layout stays usable */
-    .slidev-layout.two-columns {
-        gap: 1rem;
-    }
-}
-</style>
-
 A Comprehensive Guide for Finance Students
 
 <div class="pt-12">
@@ -53,8 +25,10 @@ A Comprehensive Guide for Finance Students
 </div>
 
 ---
+
 layout: image-right
 image: https://source.unsplash.com/collection/139386/600x600?finance
+
 ---
 
 # Why Python for Finance?
@@ -62,12 +36,14 @@ image: https://source.unsplash.com/collection/139386/600x600?finance
 <v-clicks>
 
 ## 🚀 Industry Standard
+
 - **Quantitative Analysis**
-- **Algorithmic Trading** 
+- **Algorithmic Trading**
 - **Risk Management**
 - **Financial Modeling**
 
 ## 📊 Data Science Power
+
 ```python
 # Financial data analysis pipeline
 import pandas as pd
@@ -86,6 +62,7 @@ returns = stock_data.pct_change()
 <v-clicks>
 
 ## 🎯 Key Advantages
+
 - Rich ecosystem (pandas, numpy, scipy)
 - Excellent visualization (matplotlib, seaborn)
 - Machine learning integration
@@ -94,23 +71,25 @@ returns = stock_data.pct_change()
 </v-clicks>
 
 ---
-layout: two-cols
----
+
+## layout: two-cols
 
 # Python Fundamentals Crash Course
 
 <v-clicks>
 
 ## Variables & Data Types
+
 ```python
 # Basic data types
 price = 145.67           # float
-ticker = "AAPL"          # string  
+ticker = "AAPL"          # string
 volume = 1000000         # integer
 is_trading = True        # boolean
 ```
 
 ## Financial Data Structures
+
 ```python
 # Lists for price series
 prices = [100, 102, 105, 103, 108]
@@ -129,6 +108,7 @@ for i in range(1, len(prices)):
 <v-clicks>
 
 ## Functions for Financial Calculations
+
 ```python
 def calculate_returns(prices):
     """Calculate daily returns from price series"""
@@ -144,23 +124,25 @@ daily_returns = calculate_returns(stock_prices)
 ```
 
 ## List Comprehensions
+
 ```python
 # Compact way to calculate returns
-returns = [(prices[i] - prices[i-1]) / prices[i-1] 
+returns = [(prices[i] - prices[i-1]) / prices[i-1]
           for i in range(1, len(prices))]
 ```
 
 </v-clicks>
 
 ---
-layout: two-cols
----
+
+## layout: two-cols
 
 # Essential Python Libraries
 
 <v-clicks>
 
 ## 📦 NumPy - Numerical Computing
+
 ```python
 import numpy as np
 
@@ -176,6 +158,7 @@ portfolio_return = np.dot(weights, returns)
 ```
 
 ## 🐼 Pandas - Data Manipulation
+
 ```python
 import pandas as pd
 
@@ -194,6 +177,7 @@ df = pd.DataFrame({
 <v-clicks>
 
 ## 📊 Matplotlib - Visualization
+
 ```python
 import matplotlib.pyplot as plt
 
@@ -206,6 +190,7 @@ plt.show()
 ```
 
 ## 🔬 SciPy - Scientific Computing
+
 ```python
 from scipy import stats
 from scipy.optimize import minimize
@@ -221,8 +206,8 @@ def portfolio_variance(weights):
 </v-clicks>
 
 ---
-class: px-20
----
+
+## class: px-20
 
 # Probability Theory Fundamentals
 
@@ -230,6 +215,7 @@ class: px-20
 <div>
 
 ## 📈 Random Variables
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -249,10 +235,12 @@ normal_rv = np.random.normal(mu, sigma, 1000)
 ## 🎲 Probability Distributions
 
 **Discrete:**
+
 - Binomial - Success/failure outcomes
 - Poisson - Rare events counting
 
 **Continuous:**
+
 - Normal - Natural phenomena
 - Lognormal - Stock prices
 - Exponential - Waiting times
@@ -263,19 +251,21 @@ normal_rv = np.random.normal(mu, sigma, 1000)
 <br>
 
 ### Probability Density Function (PDF)
+
 <div class="text-center">
 $f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$
 </div>
 
 ---
-layout: two-cols
----
+
+## layout: two-cols
 
 # Descriptive Statistics
 
 <v-clicks>
 
 ## Central Tendency
+
 ```python
 returns = np.array([0.02, -0.01, 0.03, 0.015, -0.005])
 
@@ -285,6 +275,7 @@ mode = stats.mode(returns)       # Most frequent
 ```
 
 ## Dispersion Measures
+
 ```python
 variance = np.var(returns)       # Spread from mean
 std_dev = np.std(returns)        # Risk measure
@@ -293,6 +284,7 @@ iqr = stats.iqr(returns)         # Middle 50% spread
 ```
 
 ## Shape Measures
+
 ```python
 skewness = stats.skew(returns)   # Distribution asymmetry
 kurtosis = stats.kurtosis(returns) # Tail thickness
@@ -305,6 +297,7 @@ kurtosis = stats.kurtosis(returns) # Tail thickness
 <v-clicks>
 
 ## Financial Application
+
 ```python
 def analyze_returns(returns):
     """Comprehensive return analysis"""
@@ -323,6 +316,7 @@ results = analyze_returns(daily_returns)
 ```
 
 ## Key Financial Metrics
+
 - **Volatility** = Standard deviation of returns
 - **Sharpe Ratio** = Return per unit of risk
 - **Maximum Drawdown** = Worst peak-to-trough decline
@@ -330,8 +324,10 @@ results = analyze_returns(daily_returns)
 </v-clicks>
 
 ---
+
 layout: image-right
 image: https://source.unsplash.com/collection/928423/600x600?chart
+
 ---
 
 # Probability Distributions in Finance
@@ -339,7 +335,9 @@ image: https://source.unsplash.com/collection/928423/600x600?chart
 <v-clicks>
 
 ## 📊 Normal Distribution
+
 Most common assumption for returns
+
 ```python
 from scipy.stats import norm
 
@@ -349,7 +347,9 @@ var_95 = norm.ppf(0.05, mean, std_dev)  # Value at Risk
 ```
 
 ## 📈 Lognormal Distribution
+
 Models stock prices (can't be negative)
+
 ```python
 # If returns are normal, prices are lognormal
 log_returns = np.log(1 + returns)
@@ -357,7 +357,9 @@ price_future = price_today * np.exp(mean_log_return)
 ```
 
 ## 📉 Student's t-Distribution
+
 Fat tails - more realistic for financial crises
+
 ```python
 from scipy.stats import t
 
@@ -368,14 +370,15 @@ df, loc, scale = t.fit(returns)
 </v-clicks>
 
 ---
-layout: two-cols
----
+
+## layout: two-cols
 
 # Statistical Inference
 
 <v-clicks>
 
 ## Hypothesis Testing
+
 ```python
 from scipy.stats import ttest_1samp, norm
 
@@ -389,6 +392,7 @@ else:
 ```
 
 ## Confidence Intervals
+
 ```python
 def confidence_interval(data, confidence=0.95):
     n = len(data)
@@ -407,6 +411,7 @@ ci_low, ci_high = confidence_interval(returns)
 <v-clicks>
 
 ## Correlation Analysis
+
 ```python
 # Portfolio correlation
 stocks = ['AAPL', 'GOOGL', 'MSFT']
@@ -418,6 +423,7 @@ corr, p_value = pearsonr(returns_AAPL, returns_GOOGL)
 ```
 
 ## Regression Analysis
+
 ```python
 from scipy.stats import linregress
 
@@ -432,8 +438,8 @@ alpha = intercept  # Excess return
 </v-clicks>
 
 ---
-class: px-20
----
+
+## class: px-20
 
 # Monte Carlo Simulation
 
@@ -443,17 +449,18 @@ class: px-20
 <div>
 
 ### Stock Price Simulation
+
 ```python
 def simulate_gbm(S0, mu, sigma, T, dt, n_simulations):
     """Geometric Brownian Motion for stock prices"""
     n_steps = int(T/dt)
     prices = np.zeros((n_simulations, n_steps))
     prices[:, 0] = S0
-    
+
     for t in range(1, n_steps):
         Z = np.random.standard_normal(n_simulations)
         prices[:, t] = prices[:, t-1] * np.exp(
-            (mu - 0.5 * sigma**2) * dt + 
+            (mu - 0.5 * sigma**2) * dt +
             sigma * np.sqrt(dt) * Z
         )
     return prices
@@ -467,21 +474,22 @@ T, dt, n_sim = 1, 1/252, 1000   # 1 year, daily steps, 1000 simulations
 <div>
 
 ### Option Pricing
+
 ```python
 def monte_carlo_option_price(S0, K, T, r, sigma, n_simulations):
     """European call option pricing"""
     # Simulate terminal stock prices
     Z = np.random.standard_normal(n_simulations)
-    ST = S0 * np.exp((r - 0.5 * sigma**2) * T + 
+    ST = S0 * np.exp((r - 0.5 * sigma**2) * T +
                      sigma * np.sqrt(T) * Z)
-    
+
     # Calculate payoffs
     payoffs = np.maximum(ST - K, 0)
-    
+
     # Discount expected payoff
     option_price = np.exp(-r * T) * np.mean(payoffs)
     std_error = np.std(payoffs) / np.sqrt(n_simulations)
-    
+
     return option_price, std_error
 
 # Example usage
@@ -492,14 +500,15 @@ price, error = monte_carlo_option_price(100, 105, 1, 0.05, 0.2, 100000)
 </div>
 
 ---
-layout: two-cols
----
+
+## layout: two-cols
 
 # Risk Management Metrics
 
 <v-clicks>
 
 ## Value at Risk (VaR)
+
 ```python
 def calculate_var(returns, confidence=0.95):
     """Historical VaR"""
@@ -513,6 +522,7 @@ def parametric_var(returns, confidence=0.95):
 ```
 
 ## Conditional VaR (Expected Shortfall)
+
 ```python
 def expected_shortfall(returns, confidence=0.95):
     """Average loss beyond VaR"""
@@ -528,6 +538,7 @@ def expected_shortfall(returns, confidence=0.95):
 <v-clicks>
 
 ## Portfolio Risk
+
 ```python
 def portfolio_risk(weights, cov_matrix):
     """Calculate portfolio volatility"""
@@ -538,17 +549,17 @@ def diversify_portfolio(returns_data, target_return):
     n_assets = returns_data.shape[1]
     mean_returns = returns_data.mean()
     cov_matrix = returns_data.cov()
-    
+
     def objective(weights):
         return portfolio_risk(weights, cov_matrix)
-    
+
     constraints = [
         {'type': 'eq', 'fun': lambda w: np.sum(w) - 1},
         {'type': 'eq', 'fun': lambda w: w @ mean_returns - target_return}
     ]
     bounds = [(0, 1) for _ in range(n_assets)]
-    
-    result = minimize(objective, n_assets * [1/n_assets], 
+
+    result = minimize(objective, n_assets * [1/n_assets],
                      bounds=bounds, constraints=constraints)
     return result.x
 ```
@@ -556,8 +567,10 @@ def diversify_portfolio(returns_data, target_return):
 </v-clicks>
 
 ---
+
 layout: center
 class: text-center
+
 ---
 
 # Time Series Analysis
@@ -567,6 +580,7 @@ class: text-center
 <v-clicks>
 
 ### Stationarity Testing
+
 ```python
 from statsmodels.tsa.stattools import adfuller
 
@@ -577,6 +591,7 @@ is_stationary = p_value < 0.05
 ```
 
 ### Autocorrelation
+
 ```python
 from statsmodels.tsa.stattools import acf, pacf
 
@@ -586,6 +601,7 @@ partial_autocorr = pacf(returns, nlags=10)
 ```
 
 ### ARIMA Modeling
+
 ```python
 from statsmodels.tsa.arima.model import ARIMA
 
@@ -598,14 +614,15 @@ forecast = fitted_model.forecast(steps=10)
 </v-clicks>
 
 ---
-layout: two-cols
----
+
+## layout: two-cols
 
 # Complete Financial Analysis Example
 
 <v-clicks>
 
 ## Data Preparation
+
 ```python
 import yfinance as yf
 import pandas as pd
@@ -614,7 +631,7 @@ import matplotlib.pyplot as plt
 
 # Download stock data
 tickers = ['AAPL', 'MSFT', 'GOOGL', 'SPY']
-data = yf.download(tickers, start='2020-01-01', 
+data = yf.download(tickers, start='2020-01-01',
                    end='2023-01-01')['Adj Close']
 
 # Calculate returns
@@ -622,6 +639,7 @@ returns = data.pct_change().dropna()
 ```
 
 ## Portfolio Analysis
+
 ```python
 # Equal weight portfolio
 weights = np.array([0.25, 0.25, 0.25, 0.25])
@@ -640,6 +658,7 @@ sharpe_ratio = annual_return / annual_volatility
 <v-clicks>
 
 ## Visualization
+
 ```python
 plt.figure(figsize=(12, 8))
 
@@ -647,7 +666,7 @@ plt.figure(figsize=(12, 8))
 cumulative_returns = (1 + returns).cumprod()
 plt.subplot(2, 1, 1)
 for ticker in tickers:
-    plt.plot(cumulative_returns.index, 
+    plt.plot(cumulative_returns.index,
              cumulative_returns[ticker], label=ticker)
 plt.legend()
 plt.title('Cumulative Returns')
@@ -663,6 +682,7 @@ plt.show()
 ```
 
 ## Risk Analysis
+
 ```python
 # VaR calculation
 var_95 = calculate_var(portfolio_returns, 0.95)
@@ -676,8 +696,10 @@ print(f"Sharpe Ratio: {sharpe_ratio:.4f}")
 </v-clicks>
 
 ---
+
 layout: center
 class: text-center
+
 ---
 
 # Next Steps & Resources
@@ -685,6 +707,7 @@ class: text-center
 <v-clicks>
 
 ## 🎯 Advanced Topics to Explore
+
 - **Machine Learning for Finance** (scikit-learn, tensorflow)
 - **High-Frequency Trading** strategies
 - **Options Pricing Models** (Black-Scholes, Binomial)
@@ -692,6 +715,7 @@ class: text-center
 - **Blockchain & Cryptocurrency Analysis**
 
 ## 📚 Recommended Libraries
+
 ```python
 # Quantitative finance
 import quantlib    # Advanced derivatives pricing
@@ -709,6 +733,7 @@ import pyspark     # Distributed computing
 ```
 
 ## 🚀 Practice Projects
+
 1. Build a trading strategy backtester
 2. Create portfolio optimization tool
 3. Develop risk management dashboard
@@ -717,8 +742,8 @@ import pyspark     # Distributed computing
 </v-clicks>
 
 ---
-layout: fact
----
+
+## layout: fact
 
 # Thank You!
 
@@ -727,6 +752,7 @@ layout: fact
 <div class="mt-10">
 
 **Key Takeaways:**
+
 - Python is powerful for financial computing
 - Statistics and probability are fundamental
 - Practice with real financial data
