@@ -16,6 +16,34 @@ mdc: true
 
 # Python & Statistics for Financial Computing
 
+<style>
+/* Increase spacing between two-column slides and add inner column padding
+     so code boxes don't touch each other in the middle. */
+.slidev-layout.two-columns {
+    gap: 2.5rem; /* grid gap between left and right columns */
+}
+
+.slidev-layout.two-columns .col-left,
+.slidev-layout.two-columns .col-right {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    box-sizing: border-box;
+}
+
+/* Ensure code block wrappers don't add extra negative margins */
+.slidev-layout.two-columns pre,
+.slidev-layout.two-columns .code {
+    margin: 0; /* remove extra outer margins so gap is consistent */
+}
+
+@media (max-width: 900px) {
+    /* On small screens, reduce gap so layout stays usable */
+    .slidev-layout.two-columns {
+        gap: 1rem;
+    }
+}
+</style>
+
 A Comprehensive Guide for Finance Students
 
 <div class="pt-12">
