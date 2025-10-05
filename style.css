@@ -1,8 +1,13 @@
 /* Custom styles for the presentation */
 
-/* Add gap between columns in two-cols layout to prevent Monaco editors from touching */
+/* 
+ * Fix for layout issue: Add margin between left and right columns in two-cols layout
+ * This prevents Monaco code editors from touching each other
+ */
+
+/* Primary fix: Add gap between columns in two-cols layout */
 .slidev-layout.two-cols {
-  gap: 2rem !important; /* Add 2rem (32px) gap between left and right columns */
+  gap: 2rem !important; /* 32px gap between left and right columns */
 }
 
 /* Ensure proper spacing in grid-based layouts */
